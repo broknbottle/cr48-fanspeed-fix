@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# Action script that turns down fans after resume from suspend
+#
+
+case "$1" in
+        hibernate|suspend)
+		# nothing
+                ;;
+        thaw|resume)
+		/usr/local/bin/fandown.sh
+                ;;
+esac
+exit $?
